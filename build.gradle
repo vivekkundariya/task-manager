@@ -21,13 +21,36 @@ configurations {
 
 repositories {
 	mavenCentral()
+	gradlePluginPortal()
 }
 
 dependencies {
+	implementation 'org.springframework:spring-web'
+
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+	// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+	implementation("com.mysql:mysql-connector-j:9.0.0")
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'com.github.ben-manes.caffeine:caffeine:3.1.0'
+
+	implementation 'software.amazon.awssdk:bom:2.20.61'
+	implementation platform('software.amazon.awssdk:bom:2.20.61')
+	implementation 'software.amazon.awssdk:sqs'
+	implementation 'software.amazon.awssdk:dynamodb'
+	implementation 'software.amazon.awssdk:dynamodb-enhanced'
+
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

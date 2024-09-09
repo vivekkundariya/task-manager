@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: task-manager
+  datasource:
+    url: jdbc:mysql://mysql:3306/taskdb
+    username: user
+    password: password
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+cloud:
+  aws:
+    region:
+      static: ap-south-1
+    endpoint:
+      dynamodb: http://localstack:4566
